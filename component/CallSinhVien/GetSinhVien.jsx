@@ -23,6 +23,7 @@ const CallSinhVien = () => {
     const data = UseFetch(url)
     return (
         <View>
+            
             <Text>Số sinh viên lấy được là {data.length}</Text>
             <View>
                 {

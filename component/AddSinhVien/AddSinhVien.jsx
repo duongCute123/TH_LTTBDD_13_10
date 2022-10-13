@@ -8,7 +8,8 @@ const AddSinhVien=()=>{
     const [fullname,setFullName]=useState('')
     const [age,setAge]=useState('')
     const [urlImage,setUrlImage]=useState('')
-    const btnAdd=()=>{
+    const btnAdd=(e)=>{
+        e.preventDefault()
         axios.post('https://633e2bdbc235b0e5751fe7a6.mockapi.io',mssv,fullname,age,urlImage)
         .then(res=>res.status(200))
         .catch(err=>console.log(err))
