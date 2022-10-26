@@ -24,9 +24,7 @@ const UpdateSinhVien = () => {
     }
     return (
         <View>
-            <Text>Trang thêm sinh viên nhé</Text>
-            <Text>Nhập mã số sinh viên cần thêm nhá</Text>
-            <TextInput placeholder="Vui lòng nhập mã số sinh viên vào" value={mssv} onChange={e => setMasSV(e.target.value)}></TextInput>
+            <Text>Trang cập nhật thông tin</Text>
             <Text>Nhập tên sinh viên</Text>
             <TextInput placeholder="Vui lòng nhập tên sinh viên" value={fullname} onChange={e => setFullName(e.target.value)}></TextInput>
             <Text>Nhập tuổi của sinh viên nhá</Text>
@@ -38,3 +36,4 @@ const UpdateSinhVien = () => {
         </View>
     )
 }
+export default UpdateSinhVien

@@ -3,23 +3,24 @@ import { Component } from "react";
 import UseFetch from "../ConfigAPi/ConfigApi";
 import { Text, View, TextInput, Image, Button } from "react-native";
 import axios from "axios"
-const SinhVien = ({ sinhvien: { mssv, fullname, age } }) => {
+const SinhVien = ({ sinhvien: { id, fullname, age ,avatar} }) => {
     const btnXoa = () => {
-        axios.post("https://633e2bdbc235b0e5751fe7a6.mockapi.io/" + `${mssv}`)
-            .then(res => res.status(200))
+        axios.post("https://633e2bdbc235b0e5751fe7a6.mockapi.io/getSinhVien/" +"1")
+            .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
     return (
         <View>
-            <Text>{fullname.toUpperCase()}</Text>
-            <Text>{mssv}</Text>
+            <Text>{fullname}</Text>
+            <Text>{id}</Text>
             <Text>{age}</Text>
+            <Image source={avatar}></Image>
             <Button title="Delete" onPress={btnXoa} color={"red"}></Button>
         </View>
     )
 }
 const CallSinhVien = () => {
-    const url = 'https://633e2bdbc235b0e5751fe7a6.mockapi.io'
+    const url = 'https://633e2bdbc235b0e5751fe7a6.mockapi.io/getSinhVien'
     const data = UseFetch(url)
     return (
         <View>
